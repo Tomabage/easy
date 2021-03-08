@@ -35,11 +35,9 @@
 </head>
 <body>
 <div id="app">
-    <e-button>按钮</e-button>
-    <e-button icon="settings">
-        按钮
-    </e-button>
-    <e-button icon="settings" icon-position="right">按钮</e-button>
+    <e-button :loading="loading1" @click="loading1=!loading1">按钮</e-button>
+    <e-button icon="settings" :loading="loading2" @click="loading2=!loading2">按钮</e-button>
+    <e-button icon="settings" icon-position="right" :loading="loading3" @click="loading3=!loading3">按钮</e-button>
 </div>
 <script src="./src/app.js"></script>
 <script src="//at.alicdn.com/t/font_2404478_t36oxzk89im.js"></script>

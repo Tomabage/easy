@@ -1,7 +1,7 @@
 <template>
-  <button class="e-button" :class="{[`icon-${iconPosition}`]:true}">
-    <e-icon class="icon" v-if="icon" :name="icon"/>
-    <e-icon  class="loading" name="loading"/>
+  <button class="e-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+    <e-icon class="icon" v-if="icon && !loading" :name="icon"/>
+    <e-icon class="loading icon" v-if="loading" name="loading"/>
     <div class="content">
       <slot/>
     </div>
@@ -12,6 +12,10 @@
 export default {
   props: {
     icon: {},
+    loading: {
+      type: Boolean,
+      default: false
+    },
     iconPosition: {
       type: String,
       default: 'left',
@@ -25,9 +29,14 @@ export default {
 
 <style lang="scss" scoped>
 @keyframes load {
-0%{transform:rotate(0deg);}
-  100%{transform:rotate(360deg)}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg)
+  }
 }
+
 .e-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -35,10 +44,11 @@ export default {
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background: var(--button-bg);
-  display:inline-flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
+
   &:hover {
     border-color: var(--border-color-hover);
   }
@@ -72,7 +82,8 @@ export default {
     }
   }
 }
-.loading{
+
+.loading {
   animation: load 1s infinite linear;
 }
 </style>
