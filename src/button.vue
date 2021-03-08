@@ -1,6 +1,7 @@
 <template>
   <button class="e-button" :class="{[`icon-${iconPosition}`]:true}">
     <e-icon class="icon" v-if="icon" :name="icon"/>
+    <e-icon  class="loading" name="loading"/>
     <div class="content">
       <slot/>
     </div>
@@ -23,6 +24,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@keyframes load {
+0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg)}
+}
 .e-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -67,5 +72,7 @@ export default {
     }
   }
 }
-
+.loading{
+  animation: load 1s infinite linear;
+}
 </style>
