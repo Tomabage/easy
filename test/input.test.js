@@ -1,5 +1,3 @@
-import sinon from "sinon"
-
 const expect = chai.expect
 import Vue from 'vue'
 import Input from '../src/input'
@@ -63,17 +61,18 @@ describe('Input',()=>{
         afterEach(()=>{
             vm.$destroy()
         })
-        it('支持change/input/focus/blur事件',  ()=> {
-            ['change','input','focus','blur'].forEach((eventName)=>{
-                vm=new Constructor({}).$mount()
-                const callback =sinon.fake()
-                vm.$on(eventName,callback)
-                // 触发input的change事件
-                let event = new Event(eventName)
-                let inputElement=vm.$el.querySelector('input')
-                inputElement.dispatchEvent(event)
-                expect(callback).to.have.been.calledWith(event)
-            })
-        });
+        it('支持 change/input/focus/blur 事件', () => {
+            ['change', 'input', 'focus', 'blur']
+                .forEach((eventName) => {
+                    vm = new Constructor({}).$mount()
+                    const callback = sinon.fake();
+                    vm.$on(eventName, callback)
+                    //触发input的change 事件
+                    let event = new Event(eventName);
+                    let inputElement = vm.$el.querySelector('input')
+                    inputElement.dispatchEvent(event)
+                    expect(callback).to.have.been.calledWith(event)
+                })
+        })
     })
 })
