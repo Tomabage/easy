@@ -49,7 +49,9 @@
         </e-button-group>
     </div>
     <div class="box">
-        <e-input value="张" @change="inputChange"></e-input>
+        <e-input v-model="message"></e-input>
+        <p>{{message}}</p>
+        <button @click="message+=1">+1</button>
     </div>
 </div>
 <script src="./src/app.js"></script>
