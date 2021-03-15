@@ -38,29 +38,47 @@
 </head>
 <body>
 <div id="app">
-    <e-row>
-        <e-col>1</e-col>
-        <e-col>2</e-col>
-    </e-row>
-    <e-row>
-        <e-col>1</e-col>
-        <e-col>2</e-col>
-        <e-col>3</e-col>
-    </e-row>
-    <e-row>
-        <e-col>1</e-col>
-        <e-col>2</e-col>
-        <e-col>3</e-col>
-        <e-col>4</e-col>
-    </e-row>
-    <e-row>
-        <e-col span="2">1</e-col>
-        <e-col span="22">11</e-col>
-    </e-row>
-    <e-row>
-        <e-col span="4">2</e-col>
-        <e-col span="20">22</e-col>
-    </e-row>
+
+    <div style="border: 1px solid red;">
+        <e-row gutter="20">
+            <e-col>1</e-col>
+            <e-col>2</e-col>
+        </e-row>
+        <e-row gutter="20">
+            <e-col>1</e-col>
+            <e-col>2</e-col>
+            <e-col>3</e-col>
+        </e-row>
+        <e-row gutter="20">
+            <e-col>1</e-col>
+            <e-col>2</e-col>
+            <e-col>3</e-col>
+            <e-col>4</e-col>
+        </e-row>
+        <e-row gutter="20">
+            <e-col span="2">1</e-col>
+            <e-col span="20" offset="2">11</e-col>
+        </e-row>
+        <e-row gutter="20">
+            <e-col span="4">2</e-col>
+            <e-col span="20">22</e-col>
+        </e-row>
+        <e-row gutter="20">
+            <e-col span="4">3</e-col>
+            <e-col span="18" offset="2">33</e-col>
+        </e-row>
+        <e-row gutter="20">
+            <e-col span="4">4</e-col>
+            <e-col span="8" offset="2">44</e-col>
+            <e-col span="8" offset="2">444</e-col>
+        </e-row>
+        <e-row gutter="20">
+            <e-col span="4">5</e-col>
+            <e-col span="4" offset="6">55</e-col>
+            <e-col span="8" offset="2">555</e-col>
+        </e-row>
+    </div>
+    <br>
     <hr>
     <div class="box">
         <e-button :loading="loading1" @click="loading1=!loading1">按钮</e-button>
