@@ -38,6 +38,30 @@
 </head>
 <body>
 <div id="app">
+    <e-row>
+        <e-col>1</e-col>
+        <e-col>2</e-col>
+    </e-row>
+    <e-row>
+        <e-col>1</e-col>
+        <e-col>2</e-col>
+        <e-col>3</e-col>
+    </e-row>
+    <e-row>
+        <e-col>1</e-col>
+        <e-col>2</e-col>
+        <e-col>3</e-col>
+        <e-col>4</e-col>
+    </e-row>
+    <e-row>
+        <e-col span="2">1</e-col>
+        <e-col span="22">11</e-col>
+    </e-row>
+    <e-row>
+        <e-col span="4">2</e-col>
+        <e-col span="20">22</e-col>
+    </e-row>
+    <hr>
     <div class="box">
         <e-button :loading="loading1" @click="loading1=!loading1">按钮</e-button>
         <e-button icon="settings" :loading="loading2" @click="loading2=!loading2">按钮</e-button>
