@@ -23,7 +23,6 @@ export default {
     offset: {
       type: [Number, String]
     },
-    phone: {type: Object, validator},
     pad: {type: Object, validator},
     narrowPc: {type: Object, validator},
     pc: {type: Object, validator},
@@ -56,7 +55,7 @@ export default {
       return [
         ...createClasses({span, offset}),
         ...createClasses(pad, 'pad-'),
-        ...createClasses(narrowPc, 'narrow-pc'),
+        ...createClasses(narrowPc, 'narrow-pc-'),
         ...createClasses(pc, 'pc-'),
         ...createClasses(widePc, 'wide-pc-')
       ]
