@@ -5,13 +5,23 @@ import ButtonGroup from './button-group'
 import Input from './input'
 import Row from './row'
 import Col from './col'
+import Layout from './layout'
+import Header from './header'
+import Content from './content'
+import Sider from './sider'
+import Footer from './footer'
 
 Vue.component('e-button', Button)
 Vue.component('e-icon', Icon)
 Vue.component('e-button-group', ButtonGroup)
 Vue.component('e-input', Input)
-Vue.component('e-row',Row)
-Vue.component('e-col',Col)
+Vue.component('e-row', Row)
+Vue.component('e-col', Col)
+Vue.component('e-layout', Layout)
+Vue.component('e-header',Header)
+Vue.component('e-content',Content)
+Vue.component('e-sider',Sider)
+Vue.component('e-footer',Footer)
 
 new Vue({
     el: '#app',
@@ -19,7 +29,7 @@ new Vue({
         loading1: false,
         loading2: true,
         loading3: false,
-        message:'hi'
+        message: 'hi'
     }
 })
 
