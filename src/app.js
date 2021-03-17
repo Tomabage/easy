@@ -35,23 +35,20 @@ new Vue({
         loading3: false,
         message: 'hi'
     },
-    created() {
-        this.$toast('我是message',{
-            enableHtml: false,
-            position:'middle',
-            closeButton: {
-                text:'关闭',
-                callback(){
-                    console.log('用户已知晓')
-                }
-            },
-            autoClose:true,
-            autoCloseDelay: 5
-        })
-    },
     methods:{
         showToast(){
-
+            this.$toast(`我是随机数${parseInt(Math.random()*100)}`,{
+                enableHtml: false,
+                position:'middle',
+                closeButton: {
+                    text:'关闭',
+                    callback(){
+                        console.log('用户已知晓')
+                    }
+                },
+                autoClose:true,
+                autoCloseDelay: 5
+            })
         }
     }
 })
