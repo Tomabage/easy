@@ -1,8 +1,8 @@
 <template>
-  <div class="toast">
+  <div class="toast" ref="wrapper">
     <slot v-if="!enableHtml"></slot>
     <div v-else v-html="$slots.default[0]"></div>
-    <div class="line"></div>
+    <div class="line" ref="line"></div>
     <span class="close" v-if="closeButton" @click="onClickClose">
      {{ closeButton.text }}
     </span>
@@ -35,6 +35,9 @@ export default {
   },
   mounted() {
     this.executeAutoClose()
+    this.$nextTick(()=>{
+      this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height}px`
+    })
   },
   methods: {
     executeAutoClose() {
