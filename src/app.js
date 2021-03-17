@@ -36,8 +36,17 @@ new Vue({
         message: 'hi'
     },
     created() {
-        this.$toast('更多文字',{
-            enableHtml: false
+        this.$toast('我是message',{
+            enableHtml: false,
+            position:'middle',
+            closeButton: {
+                text:'关闭',
+                callback(){
+                    console.log('用户已知晓')
+                }
+            },
+            autoClose:true,
+            autoCloseDelay: 5
         })
     },
     methods:{
