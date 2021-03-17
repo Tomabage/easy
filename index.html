@@ -31,25 +31,11 @@
         body {
             font-size: var(--font-size);
         }
-
-        .demo{
-            background: lightskyblue;
-            border: 1px solid black;
-            min-height: 100px;
-        }
-
     </style>
 </head>
 <body>
 <div id="app">
-    <e-layout style="height: 100vh;">
-        <e-sider>sider</e-sider>
-        <e-layout>
-            <e-header >header</e-header>
-            <e-content >content</e-content>
-            <e-footer >footer</e-footer>
-        </e-layout>
-    </e-layout>
+    <button @click="showToast">点击</button>
 </div>
 <script src="./src/app.js"></script>
 </body>
