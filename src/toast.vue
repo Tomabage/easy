@@ -1,9 +1,10 @@
 <template>
   <div class="toast">
-    <slot></slot>
+    <slot v-if="!enableHtml"></slot>
+    <div v-else v-html="$slots.default[0]"></div>
     <div class="line"></div>
     <span class="close" v-if="closeButton" @click="onClickClose">
-     {{closeButton.text}}
+     {{ closeButton.text }}
     </span>
   </div>
 </template>
@@ -19,13 +20,17 @@ export default {
       type: Number,
       default: 3
     },
-    closeButton:{
-      type:Object,
-      default(){
-        return{
-          text:'关闭',callback:undefined
+    closeButton: {
+      type: Object,
+      default() {
+        return {
+          text: '关闭', callback: undefined
         }
       }
+    },
+    enableHtml: {
+      type: Boolean,
+      default: false,
     }
   },
   mounted() {
@@ -43,9 +48,11 @@ export default {
       this.$el.remove()
       this.$destroy()
     },
-    onClickClose(){
+    onClickClose() {
       this.close()
-      this.closeButton.callback()
+      if (this.closeButton && typeof this.closeButton.callback === 'function') {
+        this.closeButton.callback(this)
+      }
     }
   }
 
@@ -54,11 +61,11 @@ export default {
 
 <style lang="scss" scoped>
 $font-size: 14px;
-$toast-height: 40px;
+$toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, .75);
 .toast {
   font-size: $font-size;
-  height: $toast-height;
+  min-height: $toast-min-height;
   line-height: 1.8;
   position: fixed;
   top: 0;
@@ -71,13 +78,17 @@ $toast-bg: rgba(0, 0, 0, .75);
   border-radius: 4px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, .5);
   padding: 0 16px;
+
+  .close {
+    padding-left: 16px;
+    flex-shrink: 0;
+  }
+
+  .line {
+    height: 100%;
+    border-left: 1px solid #bbb;
+    margin-left: 16px;
+  }
 }
-.close{
-  padding-left: 16px;
-}
-.line{
-  height: 100%;
-  border-left: 1px solid #bbb;
-  margin-left: 16px;
-}
+
 </style>

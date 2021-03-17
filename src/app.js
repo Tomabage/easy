@@ -35,9 +35,14 @@ new Vue({
         loading3: false,
         message: 'hi'
     },
+    created() {
+        this.$toast('<a href="https://www.baidu.com/">我是百度</a>',{
+            enableHtml: true
+        })
+    },
     methods:{
         showToast(){
-            this.$toast('我是message')
+
         }
     }
 })
