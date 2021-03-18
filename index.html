@@ -31,11 +31,17 @@
         body {
             font-size: var(--font-size);
         }
+        button{
+            display: block;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
 <div id="app">
-    <button @click="showToast">点击</button>
+    <button @click="showToast1">top</button>
+    <button @click="showToast2">middle</button>
+    <button @click="showToast3">bottom</button>
 </div>
 <script src="./src/app.js"></script>
 </body>
