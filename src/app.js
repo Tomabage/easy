@@ -55,8 +55,7 @@ new Vue({
                         console.log('用户已知晓')
                     }
                 },
-                autoClose:true,
-                autoCloseDelay: 5
+                autoClose:3
             })
         }
     }
