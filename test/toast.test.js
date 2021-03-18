@@ -1,4 +1,5 @@
 import sinon from "sinon";
+
 const expect = chai.expect;
 import Vue from 'vue'
 import Toast from '../src/toast'
@@ -11,7 +12,7 @@ describe('Toast', () => {
     it('存在.', () => {
         expect(Toast).to.be.ok
     })
-    describe('props', function() {
+    describe('props', function () {
         it('接收autoClose', (done) => {
             let div = document.createElement('div')
             document.body.appendChild(div)
@@ -26,7 +27,7 @@ describe('Toast', () => {
                 done()
             })
         })
-        it('接受closeButton', () => {
+        it('接受closeButton', (done) => {
             const callback = sinon.fake()
             const Constructor = Vue.extend(Toast)
             const vm = new Constructor({
@@ -39,8 +40,11 @@ describe('Toast', () => {
             }).$mount()
             let closeButton = vm.$el.querySelector('.close')
             expect(closeButton.textContent.trim()).to.eq('关闭了')
-            closeButton.click()
-            expect(callback).to.have.been.called
+            setTimeout(() => {
+                closeButton.click()
+                expect(callback).to.have.been.called
+                done()
+            }, 200)
         })
         it('接受enableHtml', () => {
             const Constructor = Vue.extend(Toast)
