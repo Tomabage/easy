@@ -37,7 +37,7 @@ export default {
   },
   methods:{
     xxx(){
-      this.eventBus.$emit('update:selected',this.name)
+      this.eventBus.$emit('update:selected',this.name,this)
     }
   }
 }
@@ -52,7 +52,8 @@ export default {
   display: flex;
   align-items: center;
   &.active{
-    background: lightskyblue;
+    font-weight: bold;
+    color:red;
   }
 }
 </style>

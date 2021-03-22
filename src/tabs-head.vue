@@ -1,6 +1,7 @@
 <template>
     <div class="tabs-head">
       <slot></slot>
+      <div class="line"></div>
       <div class="actions-wrapper">
         <slot name="actions"></slot>
       </div>
@@ -12,6 +13,9 @@ export default {
 name: "EasyTabsHead",
   inject:['eventBus'],
   created() {
+  this.eventBus.$on('update:selected',(item,vm)=>{
+    console.log(item)
+  })
   }
 }
 </script>
@@ -22,6 +26,13 @@ $tab-height:40px;
   display: flex;
   height: $tab-height;
   justify-content: flex-start;
+  position:relative;
+  > .line{
+    position: absolute;
+    bottom: 0;
+    border-bottom: 1px solid #666;
+    width: 100px;
+  }
   > .actions-wrapper{
     margin-left: auto;
   }
