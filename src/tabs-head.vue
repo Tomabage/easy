@@ -12,7 +12,6 @@ export default {
 name: "EasyTabsHead",
   inject:['eventBus'],
   created() {
-  this.$emit('update:selected','tabs-head 给出的数据')
   }
 }
 </script>
@@ -23,7 +22,6 @@ $tab-height:40px;
   display: flex;
   height: $tab-height;
   justify-content: flex-start;
-  align-items: center;
   > .actions-wrapper{
     margin-left: auto;
   }
