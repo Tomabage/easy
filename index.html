@@ -39,9 +39,23 @@
 </head>
 <body>
 <div id="app">
-    <button @click="showToast1">top</button>
-    <button @click="showToast2">middle</button>
-    <button @click="showToast3">bottom</button>
+    <e-tabs :selected.sync="selectedTab">
+        <e-tabs-head>
+            <template slot="actions">
+                <button>设置</button>
+            </template>
+            <e-tabs-item name="news">
+               <e-icon name="settings"></e-icon> 新闻
+            </e-tabs-item>
+            <e-tabs-item name="sports">体育</e-tabs-item>
+            <e-tabs-item name="cars">汽车</e-tabs-item>
+        </e-tabs-head>
+        <e-tabs-body>
+            <e-tabs-pane name="news">新闻相关资讯</e-tabs-pane>
+            <e-tabs-pane name="sports">体育相关资讯</e-tabs-pane>
+            <e-tabs-pane name="cars">汽车相关资讯</e-tabs-pane>
+        </e-tabs-body>
+    </e-tabs>
 </div>
 <script src="./src/app.js"></script>
 </body>

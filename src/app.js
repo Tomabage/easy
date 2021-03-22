@@ -12,6 +12,11 @@ import Sider from './sider'
 import Footer from './footer'
 import Toast from './toast'
 import plugin from './plugin'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
 
 Vue.component('e-button', Button)
 Vue.component('e-icon', Icon)
@@ -26,38 +31,20 @@ Vue.component('e-sider',Sider)
 Vue.component('e-footer',Footer)
 Vue.component('e-toast',Toast)
 Vue.use(plugin)
+Vue.component('e-tabs',Tabs)
+Vue.component('e-tabs-head',TabsHead)
+Vue.component('e-tabs-body',TabsBody)
+Vue.component('e-tabs-item',TabsItem)
+Vue.component('e-tabs-pane',TabsPane)
+
 
 new Vue({
     el: '#app',
     data: {
-        loading1: false,
-        loading2: true,
-        loading3: false,
-        message: 'hi'
+        selectedTab:'news'
     },
     methods:{
-        showToast1(){
-            this.showToast('top')
-        },
-        showToast2(){
-            this.showToast('middle')
-        },
-        showToast3(){
-            this.showToast('bottom')
-        },
-        showToast(position){
-            this.$toast(`我是随机数${parseInt(Math.random()*100)}`,{
-                enableHtml: false,
-                position,
-                closeButton: {
-                    text:'关闭',
-                    callback(){
-                        console.log('用户已知晓')
-                    }
-                },
-                autoClose:3
-            })
-        }
+
     }
 })
 
