@@ -34,8 +34,8 @@
     </style>
 </head>
 <body>
-<div id="app">
-    <div style="overflow:hidden; padding: 150px;">
+<div id="app" style="padding-left: 100px;">
+    <div style="overflow:hidden; padding-top: 150px; padding-bottom: 60px;">
         <e-popover position="top">
             <template slot="content">
                 <div>asdfhasdgasdgasdfaoiwerweriweroweriwerowe</div>
@@ -55,6 +55,32 @@
             <e-button>点击</e-button>
         </e-popover>
         <e-popover position="right">
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <e-button>点击</e-button>
+        </e-popover>
+    </div>
+    <div style="overflow:hidden;">
+        <e-popover position="top" trigger="hover">
+            <template slot="content">
+                <div>asdfhasdgasdgasdfaoiwerweriweroweriwerowe</div>
+            </template>
+            <e-button>点击</e-button>
+        </e-popover>
+        <e-popover position="bottom" trigger="hover">
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <e-button>点击</e-button>
+        </e-popover>
+        <e-popover position="left" trigger="hover">
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <e-button>点击</e-button>
+        </e-popover>
+        <e-popover position="right" trigger="hover">
             <template slot="content">
                 <div>popover内容</div>
             </template>
