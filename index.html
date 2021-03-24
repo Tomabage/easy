@@ -34,24 +34,21 @@
     </style>
 </head>
 <body>
-<div id="app">
-    <e-tabs :selected.sync="selectedTab">
-        <e-tabs-head>
-            <template slot="actions">
-                <button>设置</button>
+<div id="app" style="padding-top: 100px; padding-left: 100px; border: 1px solid red;">
+    <div style="overflow:hidden; border: 1px solid black;padding: 5px;">
+        <e-popover>
+            <template slot="content">
+                <div>popover内容</div>
             </template>
-            <e-tabs-item name="news">
-               <e-icon name="settings"></e-icon> 新闻
-            </e-tabs-item>
-            <e-tabs-item name="sports">体育</e-tabs-item>
-            <e-tabs-item name="cars" disabled>汽车</e-tabs-item>
-        </e-tabs-head>
-        <e-tabs-body>
-            <e-tabs-pane name="news">新闻相关资讯</e-tabs-pane>
-            <e-tabs-pane name="sports">体育相关资讯</e-tabs-pane>
-            <e-tabs-pane name="cars">汽车相关资讯</e-tabs-pane>
-        </e-tabs-body>
-    </e-tabs>
+            <button>点击</button>
+        </e-popover>
+        <e-popover>
+            <template slot="content">
+                <div>popover内容</div>
+            </template>
+            <button>点击</button>
+        </e-popover>
+    </div>
 </div>
 <script src="./src/app.js"></script>
 </body>
