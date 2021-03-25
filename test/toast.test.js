@@ -9,7 +9,7 @@ Vue.config.devtools = false
 
 
 describe('Toast', () => {
-    it('存在.', () => {
+    it('存在', () => {
         expect(Toast).to.be.ok
     })
     describe('props', function () {
