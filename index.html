@@ -37,8 +37,11 @@
 <div id="app" style="padding-left: 100px;">
     <div style="overflow:hidden; padding-top: 150px; padding-bottom: 60px;">
         <e-popover position="top">
-            <template slot="content">
-                <div>asdfhasdgasdgasdfaoiwerweriweroweriwerowe</div>
+            <template slot="content" slot-scope="{close}">
+                <div>文字
+                    <a href="http://www.baidu.com">百度一下</a>
+                    <e-button @click="close">关闭</e-button>
+                </div>
             </template>
             <e-button>点击</e-button>
         </e-popover>
