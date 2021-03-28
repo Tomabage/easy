@@ -47,7 +47,7 @@ Vue.component('e-collapse-item', CollapseItem)
 new Vue({
     el: '#app',
     data: {
-        selectedTab: 'news'
+        selectedTab: '1'
     },
     methods: {}
 })
