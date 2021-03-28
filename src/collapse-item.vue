@@ -12,9 +12,9 @@
 <script>
 export default {
   name: "EasyCollapseItem",
-  data(){
-    return{
-      open:false
+  data() {
+    return {
+      open: false
     }
   },
   props: {
@@ -22,35 +22,25 @@ export default {
       type: String,
       required: true
     },
-    name:{
-      type:String,
+    name: {
+      type: String,
       required: true
     }
   },
-  inject:['eventBus'],
+  inject: ['eventBus'],
   mounted() {
-    this.eventBus && this.eventBus.$on('update:selected',(name)=>{
-      if(name!==this.name){
-        this.close()
-      } else {
-        this.show()
-      }
+    this.eventBus && this.eventBus.$on('update:selected', (names) => {
+      this.open = names.indexOf(this.name) >= 0;
     })
   },
-  methods:{
-    toggle(){
-      if(this.open){
-        this.open =false
+  methods: {
+    toggle() {
+      if (this.open) {
+        this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
       } else {
-        this.eventBus && this.eventBus.$emit('update:selected',this.name)
+        this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
       }
     },
-    close(){
-      this.open =false
-    },
-    show(){
-      this.open =true
-    }
   },
 }
 </script>
@@ -61,13 +51,14 @@ $border-radius: 4px;
 .collapseItem {
   > .title {
     border: 1px solid $grey;
-    margin: -1px -1px ;
+    margin: -1px -1px;
     min-height: 32px;
     display: flex;
     align-items: center;
     padding: 0 8px;
   }
-  >.content{
+
+  > .content {
     padding: 8px;
   }
 
