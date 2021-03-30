@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="toastClasses">
+  <div class="wrapper" :class="toastClasses" ref="toastWrapper">
     <div class="toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
@@ -16,6 +16,7 @@
 
 <script>
 export default {
+  name:'EasyToast',
   props: {
     autoClose: {
       type: [Boolean, Number],
@@ -42,6 +43,10 @@ export default {
       validator(value) {
         return ['top', 'middle', 'bottom'].indexOf(value) >= 0
       }
+    },
+    zIndex:{
+      type:Number,
+      default:20,
     }
   },
   computed: {
@@ -52,6 +57,7 @@ export default {
     }
   },
   mounted() {
+    this.$refs.toastWrapper.style.zIndex =this.zIndex
     this.updateStyles()
     this.executeAutoClose()
   },
@@ -175,6 +181,9 @@ $animation-duration: 300ms;
   .close {
     padding-left: 16px;
     flex-shrink: 0;
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   .line {
