@@ -1,4 +1,5 @@
 module.exports = {
+    base:'/easy/',
     title: 'Easy UI',
     description: '简单易用、高效开发',
     themeConfig: {
