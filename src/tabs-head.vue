@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-head">
+  <div class="tabs-head" ref="head">
     <slot></slot>
     <div class="line" ref="line"></div>
     <div class="actions-wrapper">
@@ -13,10 +13,11 @@ export default {
   name: "EasyTabsHead",
   inject: ['eventBus'],
   mounted() {
-    this.eventBus.$on('update:selected', (item, vm) => {
+    this.eventBus.$on('update:selected', (itemName, vm) => {
+      let headLeft = this.$refs.head.getBoundingClientRect().x
       let {width, left} = vm.$el.getBoundingClientRect()
       this.$refs.line.style.width = `${width}px`
-      this.$refs.line.style.left = `${left}px`
+      this.$refs.line.style.left = `${left - headLeft}px`
     })
   }
 }
