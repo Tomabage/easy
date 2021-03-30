@@ -4,7 +4,7 @@
 
 ## 介绍
 
-这是我在学习Vue过程中做的一个UI框架，希望能对你有所帮助。
+参考Ant Design 制作一个小组件库。
 
 ## 开始使用
 
@@ -14,41 +14,49 @@
    ````
    *,*::before,*::after{box-sizing: border-box;}
    ````
-   你还需要设置默认颜色等变量（后续会更新为SCSS变量）
-    ````
-     html {
-            --button-height: 32px;
-            --font-size: 14px;
-            --button-bg: white;
-            --button-active-bg: #eee;
-            --border-radius: 4px;
-            --color: #333;
-            --border-color: #999;
-            --border-color-hover: #666;
-        }
-    ````
 2. 安装 easy
    ````
     npm i --save easy-z
    ````
 3. 引入 easy
     ````
-   import {Button,ButtonGroup,Icon} from 'easy-z'
+   import {Button,ButtonGroup,Icon,Col, Collapse, CollapseItem, Content, Footer, Header, Input, Layout, Popover
+             , Row, Sider, Tabs, TabsHead, TabsBody, TabsItem, TabsPane, Toast,plugin} from 'easy-z'
    import 'easy-z/dist/index.css'
+   import Vue from 'vue'
    
+   Vue.use(plugin)
    export default {
      name: 'app',
      components: {
         'e-button': Button,
-        'e-icon': Icon
+        'e-icon': Icon,
+        'e-button-group':ButtonGroup,
+        'e-input': Input,
+        'e-col':Col,
+        'e-row': Row,
+        'e-layout': Layout,
+        'e-content': Content,
+        'e-footer': Footer,
+        'e-header': Header,
+        'e-sider': Sider,
+        'e-tabs': Tabs,
+        'e-tabs-head': TabsHead,
+        'e-tabs-body': TabsBody,
+        'e-tabs-item': TabsItem,
+        'e-tabs-pane': TabsPane,
+        'e-toast': Toast,
+        'e-popover': Popover,
+        'e-collapse':Collapse,
+        'e-collapse-item':CollapseItem,     
      }
    }
    ````
 
 ## 文档
-
+[Easy UI 官网](https://tomabage.github.io/easy/)
 ## 提问
-
+[issues](https://github.com/Tomabage/easy/issues)
 ## 变更记录
 
 ## 联系我们
