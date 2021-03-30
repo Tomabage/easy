@@ -50,6 +50,7 @@ $grey: grey;
 $border-radius: 4px;
 .collapseItem {
   > .title {
+    cursor:pointer;
     border: 1px solid $grey;
     margin: -1px -1px;
     min-height: 32px;
